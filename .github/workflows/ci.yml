@@ -1,0 +1,29 @@
+name: CI Workflow
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  release:
+    name: Semantic Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: GitHub Checkout
+        uses: actions/checkout@v2
+      - name: Use NodeJS 12.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+      - name: Install Dependencies
+        run: |
+          yarn install --frozen-lockfile
+      - name: Release Changes
+        env:
+          GIT_AUTHOR_EMAIL: 'shodan@jurosbaixos.com.br'
+          GIT_AUTHOR_NAME: 'Shodan'
+          GIT_COMMITTER_EMAIL: 'shodan@jurosbaixos.com.br'
+          GIT_COMMITTER_NAME: 'Shodan'
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          yarn release

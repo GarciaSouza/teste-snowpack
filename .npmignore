@@ -1,0 +1,6 @@
+# Blacklist
+**/*
+
+# Whitelist 
+!build/**/*
+!package.json

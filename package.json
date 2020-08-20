@@ -1,0 +1,42 @@
+{
+  "license": "WTFPL",
+  "name": "@dicaius/poc",
+  "private": true,
+  "scripts": {
+    "start": "node --enable-source-maps --require esm --require source-map-support/register build/_dist_/index.js",
+    "build": "snowpack build",
+    "test": "echo \"This template does not include a test runner by default.\" && exit 1",
+    "format": "prettier --write \"src/**/*.{ts,js}\"",
+    "lint": "prettier --check \"src/**/**/*.{ts,js}\"",
+    "release": "npx semantic-release"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.11.1",
+    "@commitlint/cli": "^9.1.2",
+    "@commitlint/config-angular": "^9.1.2",
+    "@semantic-release/changelog": "^5.0.1",
+    "@semantic-release/commit-analyzer": "^8.0.1",
+    "@semantic-release/exec": "^5.0.0",
+    "@semantic-release/git": "^9.0.0",
+    "@semantic-release/github": "^7.0.7",
+    "@semantic-release/npm": "^7.0.5",
+    "@semantic-release/release-notes-generator": "^9.0.1",
+    "@snowpack/plugin-run-script": "^2.1.0",
+    "@types/express": "^4.17.7",
+    "@types/node": "^14.6.0",
+    "builtin-modules": "^3.1.0",
+    "conventional-changelog-conventionalcommits": "^4.4.0",
+    "express": "^4.17.1",
+    "husky": "^4.2.5",
+    "prettier": "^2.0.5",
+    "rollup-plugin-node-externals": "^2.2.0",
+    "semantic-release": "^17.1.1",
+    "snowpack": "^2.8.0",
+    "typescript": "^3.9.7"
+  },
+  "dependencies": {
+    "esm": "^3.2.25",
+    "source-map-support": "^0.5.19"
+  },
+  "version": "1.0.1"
+}
